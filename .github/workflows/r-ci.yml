@@ -19,15 +19,15 @@ jobs:
 
       - name: Install dependencies
         run: |
-          install.packages("remotes")
-          remotes::install_deps(dependencies = TRUE)
+          Rscript -e 'install.packages("remotes")'
+          Rscript -e 'remotes::install_deps(dependencies = TRUE)'
 
       - name: Run tests
         run: |
-          install.packages("testthat")
-          testthat::test_dir("tests/testthat")
+          Rscript -e 'install.packages("testthat")'
+          Rscript -e 'testthat::test_dir("tests/testthat")'
 
       - name: Lint code
         run: |
-          install.packages("lintr")
-          lintr::lint_dir()
+          Rscript -e 'install.packages("lintr")'
+          Rscript -e 'lintr::lint_dir()'
