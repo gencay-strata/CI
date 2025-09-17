@@ -5,5 +5,5 @@
             "ascending": true
         }
     ],
-    "path": "~/r-ci"
+    "path": "~/r-ci/.github/workflows"
 }
