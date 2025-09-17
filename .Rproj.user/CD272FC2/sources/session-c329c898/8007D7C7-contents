@@ -2,17 +2,19 @@
 
 # Create dummy student data
 student_data <- data.frame(
-  age = c(21, 22, 23, 24, NA),
-  gender = c("M", "F", "F", "M", "F"),
+  age = c(21, 22, 23, 24, 25),
+  gender = c("M", "F", "F", "M", "F"),   # kept, but not used in the model
   score = c(85, 90, 78, 88, 92),
   passed = c(1, 1, 0, 1, 1)
 )
 
-# Remove rows with missing values
+# Keep only complete rows
 student_data <- na.omit(student_data)
 
-# Check that all predictors are numeric
+# Define predictor variables actually used in the model
 predictor_vars <- c("age", "score")
+
+# Sanity check: all predictors should be numeric
 if (!all(sapply(student_data[, predictor_vars], is.numeric))) {
   stop("All predictor variables must be numeric.")
 }
