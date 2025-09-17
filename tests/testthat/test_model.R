@@ -1,7 +1,7 @@
 # tests/testthat/test_model.R
 
 test_that("All predictions are numeric and binary", {
-  source("R/train_model.R")  # make sure script runs first
+  source("../../R/train_model.R")  
   
   expect_true(is.numeric(output$predictions))
   expect_true(all(output$predicted_class %in% c(0, 1)))
